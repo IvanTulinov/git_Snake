@@ -22,7 +22,10 @@ namespace Snake
             vLineRight.Drow();
 
             Point p1 = new Point(5, 5, '*');
-            p1.Show();
+            //p1.Show();
+
+            Snake snake = new Snake( p1, 4, Direction.Right );
+            snake.Drow();
 
             Console.ReadKey();
         }
