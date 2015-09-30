@@ -11,10 +11,18 @@ namespace Snake
         static void Main(string[] args)
         {
             Point p1 = new Point(1,1,'*');
-            p1.Show();
-
             Point p2 = new Point(4,5,'#');
-            p2.Show();
+            Point p3 = new Point(2, 3, '@');
+
+            List<Point> pointList = new List<Point>();
+            pointList.Add(p1);
+            pointList.Add(p2);
+            pointList.Add(p3);
+
+            foreach (var item in pointList)
+            {
+                item.Show();
+            }
 
             Console.ReadKey();
         }
