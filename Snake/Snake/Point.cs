@@ -65,5 +65,16 @@ namespace Snake
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }
+
+        public bool IsHit(Point p)
+        {
+            return this.x == p.x && this.y == p.y;
+        }
+
+        internal void Snake()
+        {
+            sym = '*';
+            Show();
+        }
     }
 }
