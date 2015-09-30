@@ -42,12 +42,22 @@ namespace Snake
             }
             else if (direction==Direction.Up)
             {
-                y = y + ofset;
+                y = y - ofset;
             }
             else if(direction==Direction.Down)
             {
-                y = y - ofset;
+                y = y + ofset;
             }
+        }
+
+        internal void Clear()
+        {
+            /* это моя реализация
+            Console.SetCursorPosition(x,y);
+            Console.WriteLine(' ');
+            */
+            sym = ' ';
+            Show();
         }
 
         public void Show()

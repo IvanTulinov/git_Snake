@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Snake
@@ -22,12 +23,22 @@ namespace Snake
             vLineRight.Drow();
 
             Point p1 = new Point(5, 5, '*');
-            //p1.Show();
-
             Snake snake = new Snake( p1, 4, Direction.Right );
             snake.Drow();
 
-            Console.ReadKey();
+            while(true)
+            {
+                if(Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.SendKey(key.Key);
+                    
+                }
+                snake.Move();
+                Thread.Sleep(100);
+            }
+
+            //Console.ReadKey();
         }
     }
 }
